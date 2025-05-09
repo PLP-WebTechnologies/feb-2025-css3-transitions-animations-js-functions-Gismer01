@@ -1,0 +1,161 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Theme styles */
+body.light {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+body.dark {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+body.blue {
+    background-color: #e6f2ff;
+    color: #003366;
+}
+
+/* Animation box styles */
+.animation-box {
+    width: 200px;
+    height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.animation-box:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styles */
+button {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #007B9E;
+    transform: translateY(-2px);
+}
+
+/* Pulse animation */
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 140, 186, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 140, 186, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 140, 186, 0);
+    }
+}
+
+/* Image animation */
+.image-container {
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+#animated-image {
+    transition: all 0.5s ease;
+    border-radius: 8px;
+}
+
+#animated-image:hover {
+    transform: rotate(10deg) scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Content area styles */
+#content-area {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+}
+
+.content-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dark .content-item, .blue .content-item {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce animation (will be added via JS) */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Animation speed classes */
+.slow {
+    animation-duration: 3s !important;
+    transition-duration: 1s !important;
+}
+
+.normal {
+    animation-duration: 2s !important;
+    transition-duration: 0.5s !important;
+}
+
+.fast {
+    animation-duration: 1s !important;
+    transition-duration: 0.2s !important;
+}
